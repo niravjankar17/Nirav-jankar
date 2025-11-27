@@ -1,0 +1,226 @@
+/* --------------------------------------------- */
+/* BLUE + WHITE PREMIUM THEME WITH GLOW EFFECTS */
+/* --------------------------------------------- */
+
+:root {
+  --bg: #071a2c;          /* Deep navy */
+  --panel: #0c223b;       /* Slightly lighter navy */
+  --text: #ffffff;        /* White */
+  --muted: #d7e6ff;       /* Soft sky blue */
+  --brand: #2884ff;       /* Bright Blue */
+  --brand-2: #62b0ff;     /* Light Blue */
+  --accent: #96c9ff;      /* Aqua Blue */
+  --card: #0f2a46;        /* Dark Blue Card */
+  --border: #1c3d62;      /* Blue Border */
+  --glow: #46a0ff;        /* Neon Glow */
+}
+
+* { box-sizing: border-box; }
+
+/* Smooth Fade-in */
+* {
+  animation: fadeIn 0.7s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1200px 600px at 10% 0%, #0a1c30 0%, #071826 40%, #03101d 100%);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* --------------------------------------------- */
+/* BLINKING EFFECT (NEON STYLE) */
+/* --------------------------------------------- */
+.blink {
+  animation: blink 1.2s infinite alternate ease-in-out;
+  color: var(--brand-2);
+  text-shadow: 0 0 8px var(--glow), 0 0 14px var(--glow);
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* --------------------------------------------- */
+/* HEADER */
+/* --------------------------------------------- */
+.site-header {
+  background: rgba(40,132,255,0.12);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--brand-2);
+  text-shadow: 0 0 10px var(--glow);
+  transition: 0.3s;
+}
+.logo:hover {
+  transform: scale(1.08);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text);
+  opacity: 0.85;
+  padding: 0.5rem 0.75rem;
+  transition: 0.3s ease;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+/* --------------------------------------------- */
+/* HERO */
+/* --------------------------------------------- */
+.hero {
+  text-align: center;
+  padding: 4.5rem 1.25rem 3rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--brand);
+  text-shadow: 0 0 12px var(--glow);
+  animation: slideDown 1s ease both;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sub {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------- */
+/* BUTTON — NEON BLUE GLOW + SHINE */
+/* --------------------------------------------- */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: white;
+  padding: 0.75rem 1.1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 18px var(--glow);
+  transition: 0.3s ease;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: -120%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: rgba(255,255,255,0.35);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px var(--glow);
+}
+.btn:hover::after {
+  left: 150%;
+}
+
+/* --------------------------------------------- */
+/* SECTION HEADERS */
+/* --------------------------------------------- */
+.section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--brand-2);
+  text-shadow: 0 0 12px var(--glow);
+}
+
+/* --------------------------------------------- */
+/* CARDS — PROJECTS / SKILLS */
+/* --------------------------------------------- */
+.skill-card, .project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: 0.35s;
+}
+
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+.skill-card h3,
+.project-card h3 {
+  color: var(--brand-2);
+  text-shadow: 0 0 8px var(--glow);
+}
+
+/* --------------------------------------------- */
+/* TAGS / PILLS */
+/* --------------------------------------------- */
+.pill {
+  background: rgba(60,150,255,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(60,150,255,0.4);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  transition: 0.3s;
+}
+.pill:hover {
+  background: rgba(60,150,255,0.25);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+/* STATUS BADGE */
+.status {
+  background: rgba(40,132,255,0.18);
+  border: 1px solid rgba(40,132,255,0.35);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------- */
+/* FOOTER */
+/* --------------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
